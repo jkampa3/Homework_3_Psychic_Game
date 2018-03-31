@@ -64,6 +64,8 @@
         document.onkeyup = function(event) {
             var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
             letterGuessed.push(userGuess);
+/*
+Changes Made After Speaking To Jake on Saturday AM
 
             minusGuess--;
 
@@ -84,6 +86,25 @@
             console.log("L is for Loser!!!!");
             restartGameFunction();
         }       
+*/
+        if (userGuess == computersLetter) {
+            wins++;
+            document.querySelector("#wins").innerHTML = "Wins " + wins;
+            console.log("Per Charlie Sheen: WINNING!!");
+            restartGameFunction();
+        }
+        else if (minusGuess == 0) {
+            losses++;
+            document.querySelector("#losses").innerHTML = "Losses " + losses;
+            console.log("L is for Loser!!!!");
+            restartGameFunction();
+        }
+        else {
+            minusGuess--;
+        }
+
+        letterGuessedFunction();
+        minusGuessFunction();
 
     };
     </script>
